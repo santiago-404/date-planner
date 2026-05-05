@@ -8,7 +8,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 import DraggableFlatList, {
   RenderItemParams,
@@ -107,12 +107,15 @@ export default function Result() {
           </View>
 
           <View style={styles.actionGroup}>
+            {/* SWAP ICON */}
             <TouchableOpacity
               onPress={() => openReplace(item)}
               style={styles.iconCircle}
             >
               <Ionicons name="swap-horizontal" size={18} color="#3498DB" />
             </TouchableOpacity>
+
+            {/* LOCK ICON */}
             <TouchableOpacity
               onPress={() =>
                 setLockedIds((prev) =>
@@ -128,6 +131,16 @@ export default function Result() {
                 size={18}
                 color="#FF5A5F"
               />
+            </TouchableOpacity>
+
+            {/* DELETE ICON (RESTORED) */}
+            <TouchableOpacity
+              onPress={() =>
+                setItinerary((prev) => prev.filter((_, i) => i !== index))
+              }
+              style={styles.iconCircle}
+            >
+              <Ionicons name="trash-outline" size={18} color="#E74C3C" />
             </TouchableOpacity>
           </View>
         </TouchableOpacity>
