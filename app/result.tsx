@@ -184,7 +184,10 @@ export default function Result() {
             {itinerary.map((p, i) => (
               <Marker
                 key={`${p.id}-${i}`}
-                coordinate={{ latitude: p.lat, longitude: p.lng }}
+                coordinate={{
+                  latitude: p.lat + i * 0.00005,
+                  longitude: p.lng + i * 0.00005,
+                }}
                 // FIX: Anchor ensures the bottom tip of the pin hits the coordinate
                 anchor={{ x: 0.5, y: 1 }}
               >
