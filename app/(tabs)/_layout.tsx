@@ -16,18 +16,20 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
       }}>
+      {/* Solo planner — existing flow, untouched */}
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Solo',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
+      {/* New: group collaboration */}
       <Tabs.Screen
-        name="explore"
+        name="groups"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Groups',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.2.fill" color={color} />,
         }}
       />
     </Tabs>
